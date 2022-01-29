@@ -36,7 +36,16 @@ function getWeather() {
       
         })})
     
-  button.addEventListener("click", getWeather);
+    function displaySearchHistory(event) {
+            var cityButtons = document.createElement("button")
+            cityButtons.textContent = formInput.value
+            DisplayOnPage.appendChild(cityButtons)
+            event.preventDefault();
+          }
+
+
+    button.addEventListener("click", displaySearchHistory);
+    button.addEventListener("click", getWeather);
 
   }
     
