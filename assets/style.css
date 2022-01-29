@@ -1,105 +1,108 @@
 * {
-    margin: auto;
-    width: auto;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: auto;
+  width: auto;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
-    background-image: linear-gradient(
-      to right,
-      rgb(23, 23, 209),
-      rgb(72, 72, 177)
-    );
-    text-align: center;
-    color: white;
-    font-size: larger;
-    height: 70px;
-  }
-  
+  background-image: linear-gradient(
+    to right,
+    rgb(23, 23, 209),
+    rgb(72, 72, 177)
+  );
+  text-align: center;
+  color: white;
+  font-size: larger;
+  height: 70px;
+}
+
 h2 {
-    margin-left: 20px;
-    margin-top: 10px;
-    font-size: xx-large;
-  }
-  
+  margin-left: 20px;
+  margin-top: 10px;
+  font-size: xx-large;
+}
+
 form {
-    margin-left: 20px;
-    margin-top: 10px;
-  }
-  
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
 #username {
-    width: 25%;
-    height: 30px;
-  }
-  
+  width: 25%;
+  height: 30px;
+}
+
 .searchBtn {
-    width: 325px;
-    height: 30px;
-    color: white;
-    font-size: larger;
-    background-image: linear-gradient(
-      to right,
-      rgb(65, 125, 202),
-      rgb(62, 81, 146)
-    );
-  }
-  
-  
+  width: 325px;
+  height: 30px;
+  color: white;
+  font-size: larger;
+  background-image: linear-gradient(
+    to right,
+    rgb(65, 125, 202),
+    rgb(62, 81, 146)
+  );
+}
+
+
 .buttonHistory {
-    color: white;
-    font-size: larger;
-    background-image: linear-gradient(
-      to right,
-      rgb(65, 125, 202),
-      rgb(62, 81, 146)
-    );
-  }
-  
- hr {
-    width: 325px;
-    border: 0.5px solid black;
-    margin-top: 15px;
-    margin-left: 20px;
-  }
-  
-  .selected-city {
-    display: flex;
-    align-items: flex-end;
-  }
-  
-  
-  
-  .column {
-    text-align: start;
-  
-    width: 70%;
-    height: 200px;
-    margin-left: 360px;
-    margin-top: -150px;
-    line-height: 2;
-  }
-  
-  #currentDay {
-    text-align: center;
-    font-size: xx-large;
-    font-weight: bolder;
-  }
-  
-  .five-day {
-    text-align: start;
-    font-size: xx-large;
-    margin-top: 40px;
-  }
-   
-  .low {
-    background-color: green;
-  }
-  
-  #add{
-    border: 2px solid green;
-  }
-  
-  #card {
-   margin-left: 1px;
-  }
-  
+  color: white;
+  font-size: larger;
+  background-image: linear-gradient(
+    to right,
+    rgb(65, 125, 202),
+    rgb(62, 81, 146)
+  );
+}
+
+
+
+
+
+hr {
+  width: 325px;
+  border: 0.5px solid black;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+.selected-city {
+  display: flex;
+  align-items: flex-end;
+}
+
+
+
+.column {
+  text-align: start;
+
+  width: 70%;
+  height: 200px;
+  margin-left: 360px;
+  margin-top: -150px;
+  line-height: 2;
+}
+
+#currentDay {
+  text-align: center;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.five-day {
+  text-align: start;
+  font-size: xx-large;
+  margin-top: 40px;
+}
+ 
+.low {
+  background-color: green;
+}
+
+#add{
+  border: 2px solid green;
+}
+
+#card {
+ margin-left: 1px;
+}
