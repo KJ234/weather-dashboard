@@ -19,4 +19,4 @@ he following image shows the web application's appearance and functionality:
 ## links
 
 GitHub: https://github.com/KJ234/weather-dashboard.git
-DEployed: https://kj234.github.io/weather-dashboard/
+Deployed: https://kj234.github.io/weather-dashboard/
