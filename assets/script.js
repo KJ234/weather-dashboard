@@ -62,15 +62,28 @@ function getWeather() {
     return response.json();
   })
   .then(function(response){
-      console.log(response)
-      for ( i = 0; i < 6; i++) {
-       futureTemp.innerHTML = "Temperature: " +response.list[0].main.temp + "%"
-       futureHumidity.innerHTML = "Humidity: " +response.list[0].main.humidity + "&#176F"
-       futureWind.innerHTML = "Wind Speed: " +response.list[0].wind.speed + " MPH"
-        var note = document.getElementById("card")
-        note.style.cssText = ';border:2px solid black; width:200px';
+     
+    for(var i=0;i<response.list.length;i++){
+        var item = response.list[i];
+        // var div = document.createElement("ul");
 
-      } 
+
+        var TemperatureEl = document.createElement("ul");
+        TemperatureEl.innerHTML = "Temperature: " +response.list[i].main.temp +  "&#176F"
+        futureTemp.appendChild(TemperatureEl) 
+
+        var HumidityEl = document.createElement("ul")
+        HumidityEl.innerHTML = "Humidity: " +response.list[i].main.humidity + "%"
+        futureHumidity.appendChild(HumidityEl) 
+        
+        var windEl = document.createElement("ul")
+        windEl.innerHTML = "Wind Speed: " +response.list[i].wind.speed + " MPH"
+        futureWind.appendChild(windEl) 
+
+        
+        
+        
+    }
   })
   date()
 }
@@ -78,7 +91,7 @@ function getWeather() {
 function date (){
 var tomorrow = new Date()
 tomorrow.setDate(new Date().getDate() + 1)
-document.getElementById("tdate").innerHTML =tomorrow;
+document.getElementById("tdate").innerHTML = tomorrow;
 
 }
   button.addEventListener("click", displaySearchHistory);
