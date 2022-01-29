@@ -99,9 +99,7 @@ hr {
   background-color: green;
 }
 
-#add{
-  border: 2px solid green;
-}
+
 
 #card {
  margin-left: 1px;
@@ -116,5 +114,9 @@ hr {
 }
 
 #futurehumidity{
+    display: flex;
+}
+
+#results{
     display: flex;
 }
