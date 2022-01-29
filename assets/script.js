@@ -4,11 +4,14 @@ var currentTempEl = document.querySelector("#temperature");
 var currentHumidityEl = document.querySelector("#humidity");
 var currentWindEl = document.querySelector("#wind-speed");
 var DisplayOnPage = document.querySelector("#searchHistory");
-var currentUVEl = document.querySelector(".UV-index");
+var currentUVEl = document.querySelector("#UV-index");
 var TodayEl = document.querySelector("#currentDay");
 var TimeEl = document.querySelector(".time");
 var forecastEls = document.querySelectorAll(".five-day");
-
+var historyEl = document.getElementById("history");
+var futureTemp = document.getElementById("futuretemp");
+var futureWind = document.getElementById("futurewind");
+var futureHumidity = document.getElementById("futurehumidity");
 
 var APIKey = "bd0d0c0b9ffe1286395e4abb56d49400";
 
@@ -30,29 +33,55 @@ function getWeather() {
         })
         .then(function(data){
             console.log(data)
-
             currentUVEl.innerHTML = "";
             currentUVEl.textContent = "UV Index: "+ data[0].value
-      
-    
-        });
-        dateandTime()
-      })}
-    
-      function displaySearchHistory(event) {
-        var cityButtons = document.createElement("button")
-        cityButtons.textContent = formInput.value
-        DisplayOnPage.appendChild(cityButtons)
-        event.preventDefault();
-      }
-    
-      function dateandTime(){
-        TodayEl.innerHTML = formInput.value
-        var d = new Date();
-        document.getElementById("time").innerHTML = d;
-      }
 
-    button.addEventListener("click", displaySearchHistory);
-    button.addEventListener("click", getWeather);
+    });
+    dateandTime()
+    get5DayForecast()
+
+
+  })}
+
+  function displaySearchHistory(event) {
+    var cityButtons = document.createElement("button")
+    cityButtons.textContent = formInput.value
+    DisplayOnPage.appendChild(cityButtons)
+    event.preventDefault();
+  }
+
+  function dateandTime(){
+    TodayEl.innerHTML = formInput.value
+    var d = new Date();
+    document.getElementById("time").innerHTML = d;
+  }
+
+    function get5DayForecast (){
+  fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + formInput.value + "&appid=" + APIKey + "&cnt=5")
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function(response){
+      console.log(response)
+      for ( i = 0; i < 6; i++) {
+       futureTemp.innerHTML = "Temperature: " +response.list[0].main.temp + "%"
+       futureHumidity.innerHTML = "Humidity: " +response.list[0].main.humidity + "&#176F"
+       futureWind.innerHTML = "Wind Speed: " +response.list[0].wind.speed + " MPH"
+        var note = document.getElementById("card")
+        note.style.cssText = ';border:2px solid black; width:200px';
+
+      } 
+  })
+  date()
+}
+
+function date (){
+var tomorrow = new Date()
+tomorrow.setDate(new Date().getDate() + 1)
+document.getElementById("tdate").innerHTML =tomorrow;
+
+}
+  button.addEventListener("click", displaySearchHistory);
+  button.addEventListener("click", getWeather);
 
   
