@@ -106,3 +106,15 @@ hr {
 #card {
  margin-left: 1px;
 }
+
+#futuretemp{
+    display: flex;
+}
+
+#futurewind{
+    display: flex;
+}
+
+#futurehumidity{
+    display: flex;
+}
