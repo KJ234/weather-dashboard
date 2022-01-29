@@ -78,11 +78,7 @@ function getWeather() {
         
         var windEl = document.createElement("ul")
         windEl.innerHTML = "Wind Speed: " +response.list[i].wind.speed + " MPH"
-        futureWind.appendChild(windEl) 
-
-        
-        
-        
+        futureWind.appendChild(windEl)    
     }
   })
   date()
