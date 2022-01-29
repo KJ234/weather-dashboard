@@ -21,4 +21,22 @@ function getWeather() {
     .then(function (data) { console.log(data)
       currentHumidityEl.innerHTML = "Humidity: " + data.main.humidity + "%"
       currentTempEl.innerHTML = "Temperature: " + data.main.temp + "&#176F"
-      currentWindEl.innerHTML = "Wind Speed: " + data.wind.speed + " MPH" })}
+      currentWindEl.innerHTML = "Wind Speed: " + data.wind.speed + " MPH" 
+      var lat = data.coord.lat;
+      var lon = data.coord.lon;
+        fetch( "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey + "&cnt=1")
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function(data){
+            console.log(data)
+
+            currentUVEl.innerHTML = "";
+            currentUVEl.textContent = "UV Index: "+ data[0].value
+      
+        })})
+    
+  button.addEventListener("click", getWeather);
+
+  }
+    
