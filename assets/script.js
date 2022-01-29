@@ -64,9 +64,6 @@ function getWeather() {
      
     for(var i=0;i<response.list.length;i++){
         var item = response.list[i];
-        // var div = document.createElement("ul");
-
-
         var TemperatureEl = document.createElement("ul");
         TemperatureEl.innerHTML = "Temperature: " +response.list[i].main.temp +  "&#176F"
         futureTemp.appendChild(TemperatureEl) 
