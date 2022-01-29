@@ -13,10 +13,10 @@ var futureTemp = document.getElementById("futuretemp");
 var futureWind = document.getElementById("futurewind");
 var futureHumidity = document.getElementById("futurehumidity");
 
-
+// generated api key form the openweather website
 var APIKey = "bd0d0c0b9ffe1286395e4abb56d49400";
 
-
+// function to get the weather from the api and display on the page
 function getWeather() {
 
     fetch ( "https://api.openweathermap.org/data/2.5/weather?q=" + formInput.value + "&appid=" + APIKey)
@@ -29,6 +29,7 @@ function getWeather() {
       currentWindEl.innerHTML = "Wind Speed: " + data.wind.speed + " MPH" 
       var lat = data.coord.lat;
       var lon = data.coord.lon;
+      // Will display the uv index
         fetch( "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey + "&cnt=1")
         .then(function (response) {
           return response.json();
@@ -44,7 +45,7 @@ function getWeather() {
 
     var color = document.getElementById("check-box")
           
-
+// if statement to change UVindex color depending on number
     if(currentUVEl.value <= 2){
         color.className="green"
     } else if (currentUVEl.value <= 3 | currentUVEl.value > 5 ) {
@@ -57,7 +58,8 @@ function getWeather() {
 
 
   })}
-
+  
+//display the search history
   function displaySearchHistory() {
     var cityButtons = document.createElement("ul")
     cityButtons.textContent = formInput.value
@@ -71,6 +73,7 @@ function getWeather() {
     document.getElementById("time").innerHTML = d;
   }
 
+  // will display the five day forecast
     function get5DayForecast (){
   fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + formInput.value + "&appid=" + APIKey + "&cnt=5")
   .then(function (response) {
@@ -83,7 +86,7 @@ function getWeather() {
     futureTemp.innerHTML="";
 
     var allDivs = []
-     
+     // for statement to show the forecast for the next 5 days
     for(var i=0;i<response.list.length;i++){
 
         document.querySelector("#results").innerHTML="";
@@ -113,12 +116,15 @@ function getWeather() {
   date()
 }
 
+// displays todays and tomorrows date
 function date (){
 var tomorrow = new Date()
 tomorrow.setDate(new Date().getDate() + 1)
 document.getElementById("tdate").innerHTML = tomorrow;
 
 }
+
+// event listeners for the buttons
   button.addEventListener("click", displaySearchHistory);
   button.addEventListener("click", getWeather);
 
