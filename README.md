@@ -8,7 +8,8 @@ This is a weather dashboard that will change HTML and CSS based on form inputs. 
 
 he following image shows the web application's appearance and functionality:
 
-![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for each city.](./assets/06-server-side-apis-homework-demo.png)
+![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for each city.](./assets/Screenshot-2022-01-29-163613.png)
+
 
 ## Usage
 
