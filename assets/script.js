@@ -13,7 +13,9 @@ var futureTemp = document.getElementById("futuretemp");
 var futureWind = document.getElementById("futurewind");
 var futureHumidity = document.getElementById("futurehumidity");
 
+
 var APIKey = "bd0d0c0b9ffe1286395e4abb56d49400";
+
 
 function getWeather() {
 
@@ -40,6 +42,19 @@ function getWeather() {
     dateandTime()
     get5DayForecast()
 
+    var color = document.getElementById("check-box")
+          
+
+    if(currentUVEl.value <= 2){
+        color.className="green"
+    } else if (currentUVEl.value <= 3 | currentUVEl.value > 5 ) {
+        color.className="yellow"
+    } else if (currentUVEl.value <= 6 | currentUVEl.value > 7) {
+        color.className="orange"
+    } else if (currentUVEl.value <= 8 | currentUVEl.value > 10){
+        color.className="red"
+    } else color.className="purple"
+
 
   })}
 
@@ -47,7 +62,6 @@ function getWeather() {
     var cityButtons = document.createElement("ul")
     cityButtons.textContent = formInput.value
     DisplayOnPage.appendChild(cityButtons)
-    
     
   }
 
@@ -90,16 +104,11 @@ function getWeather() {
         div.appendChild(windEl)    
 
         allDivs.push(div);
-
-
     }
 
     allDivs.forEach(item=>{
         document.querySelector("#results").appendChild(item);
     })
-
-
-
   })
   date()
 }
