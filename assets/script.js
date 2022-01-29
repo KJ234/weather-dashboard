@@ -34,18 +34,25 @@ function getWeather() {
             currentUVEl.innerHTML = "";
             currentUVEl.textContent = "UV Index: "+ data[0].value
       
-        })})
     
-    function displaySearchHistory(event) {
-            var cityButtons = document.createElement("button")
-            cityButtons.textContent = formInput.value
-            DisplayOnPage.appendChild(cityButtons)
-            event.preventDefault();
-          }
-
+        });
+        dateandTime()
+      })}
+    
+      function displaySearchHistory(event) {
+        var cityButtons = document.createElement("button")
+        cityButtons.textContent = formInput.value
+        DisplayOnPage.appendChild(cityButtons)
+        event.preventDefault();
+      }
+    
+      function dateandTime(){
+        TodayEl.innerHTML = formInput.value
+        var d = new Date();
+        document.getElementById("time").innerHTML = d;
+      }
 
     button.addEventListener("click", displaySearchHistory);
     button.addEventListener("click", getWeather);
 
-  }
-    
+  
