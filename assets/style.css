@@ -120,3 +120,28 @@ hr {
 #results{
     display: flex;
 }
+
+.green{
+    background-color: green;
+     color: white;
+}
+
+.yellow{
+    background-color: yellow;
+    color: white;
+}
+
+.orange{
+    background-color: orange;
+    color: white;
+}
+
+.red {
+    background-color: red;
+    color: white;
+}
+
+.purple {
+    background-color: purple;
+    color: white;
+}
