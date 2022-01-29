@@ -95,5 +95,15 @@
     margin-top: 40px;
   }
    
+  .low {
+    background-color: green;
+  }
   
+  #add{
+    border: 2px solid green;
+  }
+  
+  #card {
+   margin-left: 1px;
+  }
   
