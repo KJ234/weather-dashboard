@@ -35,18 +35,20 @@ function getWeather() {
             console.log(data)
             currentUVEl.innerHTML = "";
             currentUVEl.textContent = "UV Index: "+ data[0].value
-    });
+
+          });
     dateandTime()
     get5DayForecast()
 
 
   })}
 
-  function displaySearchHistory(event) {
-    var cityButtons = document.createElement("button")
+  function displaySearchHistory() {
+    var cityButtons = document.createElement("ul")
     cityButtons.textContent = formInput.value
     DisplayOnPage.appendChild(cityButtons)
-    event.preventDefault();
+    
+    
   }
 
   function dateandTime(){
@@ -61,21 +63,43 @@ function getWeather() {
     return response.json();
   })
   .then(function(response){
+
+    futureWind.innerHTML="";
+    futureHumidity.innerHTML="";
+    futureTemp.innerHTML="";
+
+    var allDivs = []
      
     for(var i=0;i<response.list.length;i++){
+
+        document.querySelector("#results").innerHTML="";
+        var div = document.createElement("div");
+
+        
         var item = response.list[i];
         var TemperatureEl = document.createElement("ul");
         TemperatureEl.innerHTML = "Temperature: " +response.list[i].main.temp +  "&#176F"
-        futureTemp.appendChild(TemperatureEl) 
+        div.appendChild(TemperatureEl) 
 
         var HumidityEl = document.createElement("ul")
         HumidityEl.innerHTML = "Humidity: " +response.list[i].main.humidity + "%"
-        futureHumidity.appendChild(HumidityEl) 
+        div.appendChild(HumidityEl) 
         
         var windEl = document.createElement("ul")
         windEl.innerHTML = "Wind Speed: " +response.list[i].wind.speed + " MPH"
-        futureWind.appendChild(windEl)    
+        div.appendChild(windEl)    
+
+        allDivs.push(div);
+
+
     }
+
+    allDivs.forEach(item=>{
+        document.querySelector("#results").appendChild(item);
+    })
+
+
+
   })
   date()
 }
