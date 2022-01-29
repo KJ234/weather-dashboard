@@ -35,7 +35,6 @@ function getWeather() {
             console.log(data)
             currentUVEl.innerHTML = "";
             currentUVEl.textContent = "UV Index: "+ data[0].value
-
     });
     dateandTime()
     get5DayForecast()
